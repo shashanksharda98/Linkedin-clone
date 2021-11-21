@@ -6,8 +6,9 @@ import ThumbUpAltOutlinedIcon from '@mui/icons-material/ThumbUpAltOutlined';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
+import Moment from 'react-moment';
 
-const Post = forwardRef( ({name, description, message, photoUrl}, ref) => {
+const Post = forwardRef( ({name, description, message, photoUrl, timestamp}, ref) => {
     return (
         <div ref={ref} className="post">
 
@@ -17,6 +18,9 @@ const Post = forwardRef( ({name, description, message, photoUrl}, ref) => {
                     <h2>{name}</h2>
                     <p>{description}</p>
                 </div>
+                <Moment className="post__moment" fromNow>
+                    {timestamp?.toDate()}
+                </Moment>
             </div>
 
             <div className="post__body">

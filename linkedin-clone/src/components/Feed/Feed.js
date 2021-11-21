@@ -77,6 +77,7 @@ function Feed() {
                             name={post.data.name}
                             description={post.data.description}
                             message={post.data.message}
+                            timestamp={post.data.timestamp}
                          />
                     ))
                 }
